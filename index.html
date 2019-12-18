@@ -1,0 +1,84 @@
+<html>
+	<head>
+		<script src="/parity-utils/inject.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+		<style>
+			.button-container {
+				text-align: center;
+				padding:20px;
+			}
+
+			.button-error {
+				background: rgb(202, 60, 60); /* this is a maroon */
+			}
+
+			.button-large {
+				font-size: 120%;
+			}
+
+			.table-container {
+				width: 70%;
+				margin: 0 auto;
+				display:block;
+			}
+		</style>
+	</head>
+
+
+	<body> 
+		<script type="text/javascript" src=src/abi.js></script>
+		<script type="text/javascript" src=src/BoardModel.js></script>
+		<script type="text/javascript" src=src/BoardView.js></script>
+		<script type="text/javascript" src=src/GameInstance.js></script>
+		<script type="text/javascript" src=src/GameInstanceManager.js></script>
+		<script type="text/javascript" src=src/main.js></script>
+
+		<div class="pure-u-5-5 button-container">
+		
+			<button type="button"
+					class="pure-button pure-button-primary button-large" 
+					onclick="onStartPressed()">Start</button>
+
+			<button type="button" 
+					class="pure-button pure-button-primary button-large" 
+					onclick="onPlacePiecePressed()">Place</button>
+
+			<button type="button" 
+					class="pure-button pure-button-primary button-large" 
+					onclick="onSwapPressed()">Swap</button>
+
+			<button type="button" 
+					class="pure-button pure-button-primary button-error button-large"	
+					onclick="onForfeitPressed()">Forfeit</button>
+		</div>
+
+		<div class="button-container">
+			<form class="pure-form">
+		        <textarea class="pure-input-u-1"  rows='12'
+					id="gamelog" 
+					style="width:75%;"	
+					placeholder="Game log" ></textarea>	
+			</form>
+
+		</div>
+
+
+		<div class="pure-u-5-5 table-container">
+			<table class="pure-table pure-table-horizontal" style="margin:0 auto;" id="game_table">
+				 <thead>
+					<tr>
+						<th>Game Address</th>
+						<th>Player 1 </th>
+						<th>Player 2</th>
+						<th> </th>
+					</tr>
+				</thead>
+				<tbody id="table_body"> 
+				</tbody>
+			</table>
+		</div>
+
+
+		<script src="bundle.js"></script>
+	</body>
+</html>
